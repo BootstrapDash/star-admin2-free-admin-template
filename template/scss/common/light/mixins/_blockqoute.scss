@@ -1,0 +1,16 @@
+// BlockQuote Mixins //
+
+@mixin blockquote($color) {
+  border-color: $color;
+  .blockquote-footer {
+    color: $color;
+  }
+}
+
+@mixin alert-variant($color) {
+  color: $color;
+}
+@mixin alert-variant-fill($color) {
+  color: lighten($color, 80%);
+  background: $color;
+}

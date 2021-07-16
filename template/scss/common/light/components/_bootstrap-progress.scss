@@ -1,0 +1,22 @@
+/* Bootstrap Progress */
+
+.progress {
+  @include border-radius(7px);
+  height: 8px;
+  .progress-bar {
+    @include border-radius(7px);
+  }
+
+  &.progress-sm{
+    height: 0.375rem;
+  }
+  &.progress-md {
+    height: 5px;
+  }
+  &.progress-lg {
+    height: 15px;
+  }
+  &.progress-xl {
+    height: 18px;
+  }
+}

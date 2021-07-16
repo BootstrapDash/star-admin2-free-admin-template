@@ -1,0 +1,144 @@
+/* Tabs */
+
+.add-items {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  input[type="text"] {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    padding-left: 0;
+    @include placeholder {
+      font-size: 1rem;
+      color: #9b9b9b;
+    }
+  }
+  .btn {
+    margin-left: .5rem;
+    i {
+      font-size: 1.25rem;
+    }
+    .rtl & {
+      margin-left: auto;
+      margin-right: .5rem;
+    }
+  }
+}
+
+.todo-list-rounded {
+  .form-check {
+    .form-check-label  {
+      input:checked {
+        & + {
+          .input-helper {
+            &:before {
+              border-radius: 100%;
+            }
+          }
+        }
+      }
+    }
+  .flag-color {
+    color: $flag-color;
+    line-height: 1;
+  }
+  }
+ 
+}
+
+.list-wrapper {
+  height: 100%;
+  max-height: 100%;
+
+  ul {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 0;
+
+    li {
+      @extend .d-flex;
+      @extend .align-items-center;
+      @extend .justify-content-start;
+      font-size: 0.9375rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid $border-color;
+
+      .form-check {
+        @extend %ellipsor;
+        max-width: 90%;
+        &.w-100 {
+          max-width: 100%;
+        }
+
+        .form-check-label {
+          @extend%ellipsor;
+        }
+      }
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        .form-check {
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+      .col-content{
+        width: 100%;
+        >div{
+          width: 100%;
+        }
+      }
+    }
+    &.todo-list-rounded {
+      .form-check {
+        .form-check-label  {
+          input:checked {
+            & + {
+              .input-helper {
+                &:before {
+                  border-radius: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .flag-color {
+        color: $flag-color;
+        line-height: 1;
+      }
+     
+    }
+  }
+
+  input[type="checkbox"] {
+    margin-right: 15px;
+  }
+
+  .remove {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $primary;
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 20px;
+    text-align: center;
+
+    .rtl & {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
+  .completed {
+    text-decoration: line-through;
+    text-decoration-color: $primary;
+
+    .remove {
+      text-decoration: none;
+    }
+  }
+}

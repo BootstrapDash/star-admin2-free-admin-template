@@ -1,0 +1,61 @@
+/* Js-grid */
+
+.jsgrid {
+	.jsgrid-button {
+		background-image: url(../../images/sprites/jsgrid-icons.png);
+	}
+	.jsgrid-grid-header {
+		border: 1px solid $border-color;
+		border-top: 0;
+	}
+	.jsgrid-table {
+		@extend .table;
+		th {
+			font-weight: initial;
+			font-weight: 600;
+		}
+		.jsgrid-filter-row {
+			input[type=text],
+			select {
+				@extend .form-control;
+			}
+			input[type=number] {
+				@extend .form-control;
+				padding: .56rem 0;
+			}
+		}
+	}
+	.jsgrid-header-sort {
+		&:before {
+			margin-top: 10px;
+			float: right;
+		}
+	}
+	.jsgrid-header-sort-asc {
+		&:before {
+			border-color: transparent transparent $body-color;
+		}
+	}
+	.jsgrid-header-sort-desc {
+		&:before {
+			border-color: $body-color transparent transparent
+		}
+	}
+	.jsgrid-pager {
+		line-height: 2;
+		@extend .pagination;
+		@extend .flex-wrap;
+		.jsgrid-pager-nav-button,
+		.jsgrid-pager-page {
+			@extend .page-item;
+			a {
+				@extend .page-link;
+			}
+		}
+	}
+	.jsgrid-pager-current-page {
+		padding: 0.5rem 0.75rem;
+		font-weight: initial;
+		line-height: 1.25;
+	}
+}

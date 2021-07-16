@@ -1,0 +1,101 @@
+/* No-ui-slider */
+
+.noUi-target {
+  border: none;
+  box-shadow: none;
+  @include border-radius(0px);
+  &.noUi-horizontal{
+    height: 0.25rem;
+    .noUi-handle {
+      left: -17px;
+    }
+  }
+  &.noUi-vertical{
+    width: 0.25rem;
+    height: 156px;
+    display: inline-block;
+    .noUi-handle {
+      left: -6px;
+    }
+  }
+
+  .noUi-base {
+    background: $noui-base-bg;
+    box-shadow: none;
+    border: none;
+
+    .noUi-connect {
+      background: $primary;
+      box-shadow: none;
+    }
+
+    .noUi-origin {
+      background: $success;
+
+      .noUi-handle {
+        background: $white;
+        @include border-radius(100%);
+        border:$border-width solid $border-color;
+        width: 18px;
+        height: 18px;
+        top: -7px;
+        outline: none;
+        @include transition-duration(0.4s);
+        box-shadow: none;
+
+        &:after,
+        &:before {
+          display: none;
+        }
+        &:after {
+          display: block;
+          position: absolute;
+          top:5px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 6px;
+          height: 6px;
+          background: $primary;
+          @include border-radius(100%);
+        }
+        .noUi-tooltip {
+          font-weight: 600;
+          @include border-radius(4px);
+          border: none;
+          line-height: 1;
+          font-size: $default-font-size;
+          padding: 13px 12px;
+          bottom: 190%;
+        }
+      }
+    }
+  }
+  .noUi-pips {
+    .noUi-marker-horizontal,
+    .noUi-marker-vertical {
+      background: $border-color;
+    }
+    .noUi-marker-horizontal {
+      height: 9px;
+      width: 1px;
+      background: $body-color;
+    }
+    .noUi-marker-vertical {
+      height: 1px;
+      width: 9px;
+    }
+    .noUi-value {
+      color: $body-color;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Slider Color variations */
+@each $color, $value in $theme-colors {
+  .slider-#{$color} {
+    @include slider-color-variant($value);
+  }
+}

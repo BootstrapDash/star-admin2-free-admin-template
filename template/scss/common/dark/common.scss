@@ -1,0 +1,241 @@
+/*------------------------------------------------------------------
+ [Master Stylesheet]
+
+  Project:	Star Admin2 
+  Version:	1.2.1
+-------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------------------------
+  ===== Table of Contents =====
+
+  * Bootstrap functions
+  * Template variables
+  * SCSS Compass Functions
+  * Boostrap Main SCSS
+  * Template mixins
+    + Animation Mixins
+    + Badge Mixins
+    + Button Mixins
+    + Miscellaneous Mixins
+    + BlockQuote Mixins
+    + Cards Mixins
+    + Color Functions Mixins
+    + Tooltips
+    + popovers
+  * Core Styles
+    + Reset Styles
+    + Fonts
+    + Functions
+    + Backgrounds
+    + Sidebar
+    + Navbar
+    + Typography
+    + Miscellaneous
+    + Footer
+    + Layouts
+    + Utilities
+    + Demo styles
+  * Components
+    + Accordions
+    + Badges
+    + Bootstrap Alerts
+    + Boostrap Progress
+    + Buttons
+    + Breadcrumbs
+    + Cards
+    + Checkboxes and Radios
+    + Dropdowns
+    + Forms
+    + Google maps
+    + Icons
+    + Loaders
+    + Lists
+    + Modals
+    + Pagination
+    + Popover
+    + Portfolio
+    + Preview
+    + Tables
+    + Tabs
+    + Timeline
+    + Todo List
+    + Tooltips
+    + User Profile
+    + Pricing table
+    + Settings Panel
+  * Email
+    + Mail Sidebar
+    + Mail List Container
+    + Message Content
+  * Plugin Overrides
+    + Ace Editor
+    + Avgrund Popup
+    + Bootstrap Tour
+    + Chartist
+    + CodeMirror
+    + Colcade
+    + Colorpicker
+    + Context Menu
+    + Data Tables
+    + Datepicker
+    + Dropify
+    + Dropzone
+    + Flot chart
+    + Full Calendar
+    + Google Charts
+    + Icheck
+    + Jquery File Upload
+    + Js-grid
+    + Jvectormap
+    + Light Gallery
+    + Listify
+    + No-ui-slider
+    + Owl-carousel
+    + Progressbar-js
+    + Pws-tabs
+    + Quill Editor
+    + Rating
+    + Select2
+    + Summernote Editor
+    + SweetAlert
+    + Switchery
+    + Tags
+    + TinyMCE Editor
+    + Toast
+    + Typeahead
+    + Wysi Editor
+    + X-editable
+    + Wizard
+  * Landing screens
+    + Auth
+  * Horizontal Menu
+    + Horizontal
+-------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------*/
+/* === Import Bootstrap functions and variables === */
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+
+/*-------------------------------------------------------------------*/
+/* === Import template variables === */
+@import "variables";
+
+/*-------------------------------------------------------------------*/
+/* === SCSS Compass Functions === */
+@import "../../../node_modules/compass-mixins/lib/compass";
+@import "../../../node_modules/compass-mixins/lib/animate";
+
+/*-------------------------------------------------------------------*/
+/* === Boostrap Main SCSS === */
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+/*-------------------------------------------------------------------*/
+/* === Template mixins === */
+@import "mixins/misc";
+@import "mixins/animation";
+@import "mixins/badges";
+@import "mixins/blockqoute";
+@import "mixins/buttons";
+@import "mixins/breadcrumbs";
+@import "mixins/cards";
+@import "mixins/no-ui-slider";
+@import "mixins/pagination";
+@import "mixins/popovers";
+@import "mixins/tooltips";
+
+/*-------------------------------------------------------------------*/
+/* === Core Styles === */
+@import "reset";
+@import "fonts";
+@import "functions";
+@import "background";
+@import "typography";
+@import "misc";
+@import "footer";
+@import "utilities";
+@import "demo";
+@import "dashboard";
+
+/*-------------------------------------------------------------------*/
+/* === Components === */
+@import "components/accordions";
+@import "components/badges";
+@import "components/bootstrap-alerts";
+@import "components/bootstrap-progress";
+@import "components/buttons";
+@import "components/breadcrumbs";
+@import "components/cards";
+@import "components/checkbox-radio";
+@import "components/dropdown";
+@import "components/forms";
+@import "components/google-maps";
+@import "components/icons";
+@import "components/loaders/loaders";
+@import "components/lists";
+@import "components/modals";
+@import "components/pagination";
+@import "components/popover";
+@import "components/portfolio";
+@import "components/preview";
+@import "components/tables";
+@import "components/tabs";
+@import "components/timeline";
+@import "components/todo-list";
+@import "components/tooltips";
+@import "components/user-profile";
+@import "components/pricing-table";
+
+/*-------------------------------------------------------------------*/
+/* === Email === */
+@import "components/mail-components/mail-sidebar";
+@import "components/mail-components/mail-list-container";
+@import "components/mail-components/messagecontent";
+
+/*-------------------------------------------------------------------*/
+/* === Plugin overrides === */
+@import "components/plugin-overrides/ace";
+@import "components/plugin-overrides/avgrund";
+@import "components/plugin-overrides/chartist";
+@import "components/plugin-overrides/codemirror";
+@import "components/plugin-overrides/colcade";
+@import "components/plugin-overrides/colorpicker";
+@import "components/plugin-overrides/context-menu";
+@import "components/plugin-overrides/data-tables";
+@import "components/plugin-overrides/datepicker";
+@import "components/plugin-overrides/dropify";
+@import "components/plugin-overrides/dropzone";
+@import "components/plugin-overrides/flot-chart";
+@import "components/plugin-overrides/full-calendar";
+@import "components/plugin-overrides/google-charts";
+@import "components/plugin-overrides/icheck";
+@import "components/plugin-overrides/jquery-file-upload";
+@import "components/plugin-overrides/js-grid";
+@import "components/plugin-overrides/jvectormap";
+@import "components/plugin-overrides/light-gallery";
+@import "components/plugin-overrides/listify";
+@import "components/plugin-overrides/mapael";
+@import "components/plugin-overrides/no-ui-slider";
+@import "components/plugin-overrides/owl-carousel";
+@import "components/plugin-overrides/progressbar-js";
+@import "components/plugin-overrides/pws-tabs";
+@import "components/plugin-overrides/quill";
+@import "components/plugin-overrides/rating";
+@import "components/plugin-overrides/select2";
+@import "components/plugin-overrides/summernote";
+@import "components/plugin-overrides/sweet-alert";
+@import "components/plugin-overrides/switchery";
+@import "components/plugin-overrides/tags";
+@import "components/plugin-overrides/tinymce";
+@import "components/plugin-overrides/toast";
+@import "components/plugin-overrides/typeahead";
+@import "components/plugin-overrides/wysieditor";
+@import "components/plugin-overrides/x-editable";
+@import "components/plugin-overrides/wizard";
+
+/*-------------------------------------------------------------------*/
+/* === Landing screens === */
+@import "landing-screens/auth";

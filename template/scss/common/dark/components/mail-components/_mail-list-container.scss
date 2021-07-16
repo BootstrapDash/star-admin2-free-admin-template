@@ -1,0 +1,87 @@
+/* Mail List Container */
+
+.email-wrapper {
+	.mail-list-container {
+		background: $card-bg;
+		border-left: 1px solid $border-color;
+		height: 100%;
+		padding-left: 0;
+		padding-right: 0;
+
+		a {
+			text-decoration: none;
+		}
+
+		.mail-list {
+			border-bottom: 1px solid $border-color;
+			display: flex;
+			flex-direction: row;
+			padding: 10px 15px;
+			width: 100%;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.form-check {
+				margin-top: 12px;
+				width: 11%;
+				min-width: 20px;
+			}
+
+			.content {
+				width: 83%;
+				padding-left: 0;
+				padding-right: 0;
+
+				.sender-name {
+					font-size: $default-font-size;
+					font-weight: 400;
+					@extend %ellipsor;
+					max-width: 95%;
+				}
+
+				.message_text {
+					margin: 0;
+					max-width: 93%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					@extend .text-muted;
+				}
+			}
+
+			.details {
+				@extend .d-flex;
+				@extend .justify-content-end;
+				width: 5.5%;
+
+				.date {
+					text-align: right;
+					margin: auto 15px auto 0;
+					white-space: nowrap;
+					@extend .text-muted;
+				}
+
+				i {
+					margin: auto 0;
+					color: #ddd;
+
+					&.favorite {
+						color: $warning;
+					}
+				}
+			}
+
+			&.new_mail {
+				background: rgba($white, .2);
+
+				.details {
+					.date {
+						color: color(black);
+					}
+				}
+			}
+		}
+	}
+}

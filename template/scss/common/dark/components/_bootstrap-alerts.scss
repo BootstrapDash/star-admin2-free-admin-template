@@ -1,0 +1,23 @@
+/* Bootstrap Alerts */
+
+.alert {
+  font-size: $default-font-size;
+  i {
+    font-size: 1.25rem;
+    margin-right: 1.25rem;
+    vertical-align: middle;
+    line-height: .5;
+  }
+}
+
+// @each $color, $value in $theme-colors {
+//   .alert-#{$color} {
+//     @include alert-variant($color, theme-color-level($color, 1), theme-color-level($color, 3));
+//   }
+// }
+
+// @each $color, $value in $theme-colors {
+//   .alert-fill-#{$color} {
+//     @include alert-variant($color, $color, color(white));
+//   }
+// }
