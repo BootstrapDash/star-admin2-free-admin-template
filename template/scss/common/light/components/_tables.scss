@@ -119,3 +119,6 @@
 .table > :not(:last-child) > :last-child > *, .jsgrid .jsgrid-table > :not(:last-child) > :last-child > * {
   border-bottom-color: $border-color;
 }
+.table > :not(:first-child), .jsgrid .jsgrid-table > :not(:first-child) {
+  border-top: none;
+}
