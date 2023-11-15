@@ -145,5 +145,12 @@
   $('#navbar-search-icon').click(function() {
     $("#navbar-search-input").focus();
   });
+  if ($("#datepicker-popup").length) {
+    $('#datepicker-popup').datepicker({
+      enableOnReadonly: true,
+      todayHighlight: true,
+    });
+    $("#datepicker-popup").datepicker("setDate", "0");
+  }
   
 })(jQuery);

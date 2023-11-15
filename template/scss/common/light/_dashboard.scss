@@ -1,22 +1,202 @@
 
-#performance-line-legend {
-  .chartjs-legend {
-      margin-right: 20px;
 
-      ul {
-          li {
-              color: $text-muted;
-              font-size: 12px;
-
-              span {
-                  width: 10px;
-                  height: 10px;
-                  border-radius: 100%;
-              }
-          }
-      }
+#performanceLine-legend,
+#salesTrend-legend,
+#performaneLinePurple-legend,
+#performaneLinePurple-dark-legend,
+#projectEmployment-legend,
+#modernBubble-legend {
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: inline-block;
+        margin-right: 1rem;
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+  & > :first-child {
+    display: none;
   }
 }
+#marketingOverview-legend,
+#marketingOverviewPurple-legend,
+#marketingOverviewPurple-dark-legend {
+  ul {
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: inline-block;
+        margin-left: 1rem;
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+  & > :first-child {
+    display: none;
+  }
+}
+#doughnutChart-legend,
+#doughnutChartPurple-legend,
+#doughnutChartPurple-dark-legend {
+  ul {
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: inline-block;
+        margin-left: 1rem;
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+}
+#doughnutChartAnalytic-legend {
+  ul {
+    margin-bottom: 0;
+    display: none;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: block;
+        margin-left: 1rem;
+        text-align: left;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: .5rem;
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 10px;
+            &.data-value {
+              width: auto;
+              height: auto;
+              font-size: 20px;
+              font-weight: 600;
+              display: block;
+              color: $dark;
+            }
+        }
+    }
+  }
+  ul:first-child {
+    display: block;
+  }
+}
+#salesTrendSales-legend {
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: inline-block;
+        margin-right: 1rem;
+        span {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+  & > :first-child {
+    display: none;
+  }
+}
+#doughnutChartCrm-legend {
+  ul {
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 14px;
+        display: block;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+  // & > :first-child {
+  //   display: none;
+  // }
+}
+
+#modernChartliability-legend,
+#customerOverviewEcommerce-legend,
+#totalSalesByUnit-legend {
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: inline-block;
+        margin-right: .25rem;
+        span {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+}
+#incomeExpences-legend {
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+        color: $text-muted;
+        font-size: 12px;
+        display: inline-block;
+        margin-right: .25rem;
+        span {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+  }
+  & > :first-child {
+    display: none;
+  }
+}
+
 .home-tab {
   .btn {
     padding: 8px 15px;

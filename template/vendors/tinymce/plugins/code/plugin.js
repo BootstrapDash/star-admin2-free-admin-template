@@ -1,30 +1,26 @@
 /**
- * Copyright (c) Tiny Technologies, Inc. All rights reserved.
- * Licensed under the LGPL or a commercial license.
- * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see https://www.tiny.cloud/
- *
- * Version: 5.6.2 (2020-12-08)
+ * TinyMCE version 6.7.3 (2023-11-15)
  */
+
 (function () {
     'use strict';
 
     var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-    var setContent = function (editor, html) {
+    const setContent = (editor, html) => {
       editor.focus();
-      editor.undoManager.transact(function () {
+      editor.undoManager.transact(() => {
         editor.setContent(html);
       });
       editor.selection.setCursorLocation();
       editor.nodeChanged();
     };
-    var getContent = function (editor) {
+    const getContent = editor => {
       return editor.getContent({ source_view: true });
     };
 
-    var open = function (editor) {
-      var editorContent = getContent(editor);
+    const open = editor => {
+      const editorContent = getContent(editor);
       editor.windowManager.open({
         title: 'Source Code',
         size: 'large',
@@ -49,44 +45,41 @@
           }
         ],
         initialData: { code: editorContent },
-        onSubmit: function (api) {
+        onSubmit: api => {
           setContent(editor, api.getData().code);
           api.close();
         }
       });
     };
 
-    var register = function (editor) {
-      editor.addCommand('mceCodeEditor', function () {
+    const register$1 = editor => {
+      editor.addCommand('mceCodeEditor', () => {
         open(editor);
       });
     };
 
-    var register$1 = function (editor) {
+    const register = editor => {
+      const onAction = () => editor.execCommand('mceCodeEditor');
       editor.ui.registry.addButton('code', {
         icon: 'sourcecode',
         tooltip: 'Source code',
-        onAction: function () {
-          return open(editor);
-        }
+        onAction
       });
       editor.ui.registry.addMenuItem('code', {
         icon: 'sourcecode',
         text: 'Source code',
-        onAction: function () {
-          return open(editor);
-        }
+        onAction
       });
     };
 
-    function Plugin () {
-      global.add('code', function (editor) {
-        register(editor);
+    var Plugin = () => {
+      global.add('code', editor => {
         register$1(editor);
+        register(editor);
         return {};
       });
-    }
+    };
 
     Plugin();
 
-}());
+})();
