@@ -70,31 +70,33 @@ gulp.task('sass:watch', function () {
 
 /* inject partials like sidebar and navbar */
 gulp.task('injectPartial', function () {
-  return gulp.src("./*.html", { base: "./" })
-    .pipe(injectPartials())
-    .pipe(gulp.dest("."));
+    return gulp.src(["./pages/**/*.html", "./index.html"], {
+            base: "./"
+        })
+        .pipe(injectPartials())
+        .pipe(gulp.dest("."));
 });
 
 /* inject Js and CCS assets into HTML */
 gulp.task('injectCommonAssets', function () {
   return gulp.src('./**/*.html')
     .pipe(inject(gulp.src([ 
-        './vendors/feather/feather.css',
-        './vendors/mdi/css/materialdesignicons.min.css',
-        './vendors/ti-icons/css/themify-icons.css',
-        './vendors/typicons/typicons.css',
-        './vendors/simple-line-icons/css/simple-line-icons.css',
-        './vendors/css/vendor.bundle.base.css', 
-        './vendors/js/vendor.bundle.base.js',
-        './vendors/bootstrap-datepicker/bootstrap-datepicker.min.js',
+        './assets/vendors/feather/feather.css',
+        './assets/vendors/mdi/css/materialdesignicons.min.css',
+        './assets/vendors/ti-icons/css/themify-icons.css',
+        './assets/vendors/typicons/typicons.css',
+        './assets/vendors/simple-line-icons/css/simple-line-icons.css',
+        './assets/vendors/css/vendor.bundle.base.css', 
+        './assets/vendors/js/vendor.bundle.base.js',
+        './assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js',
     ], {read: false}), {name: 'plugins', relative: true}))
     .pipe(inject(gulp.src([
-        './css/*.css', 
-        './js/off-canvas.js', 
-        './js/hoverable-collapse.js', 
-        './js/template.js', 
-        './js/settings.js', 
-        './js/todolist.js'
+        './assets/css/*.css', 
+        './assets/js/off-canvas.js', 
+        './assets/js/hoverable-collapse.js', 
+        './assets/js/template.js', 
+        './assets/js/settings.js', 
+        './assets/js/todolist.js'
     ], {read: false}), {relative: true}))
     .pipe(gulp.dest('.'));
 });
@@ -104,24 +106,21 @@ gulp.task('injectLayoutStyles', function () {
     var verticalLightStream = gulp.src(['./**/*.html',
             './index.html'])
         .pipe(inject(gulp.src([
-            './css/vertical-layout-light/style.css', 
+            './assets/css/vertical-layout-light/style.css', 
         ], {read: false}), {relative: true}))
         .pipe(gulp.dest('.'));
     return merge(verticalLightStream);
 });
 
 /*replace image path and linking after injection*/
-gulp.task('replacePath', function(){
-    var replacePath2 = gulp.src(['./pages/*.html'], { base: "./" })
-        .pipe(replace('="images/', '="../images/'))
-        .pipe(replace('"pages/', '"../pages/'))
-        .pipe(replace('href="index.html"', 'href="../index.html"'))
-        .pipe(gulp.dest('.'));
-    var replacePath3 = gulp.src(['./index.html'], { base: "./" })
-        .pipe(replace('="images/', '="images/'))
-        .pipe(gulp.dest('.'));
-    return merge( replacePath2, replacePath3);
-});
+gulp.task('replacePath', () => {
+    var replacePath1 = gulp.src(['./pages/**/*.html'], { base: "./" })
+        .pipe(replace('="../index.html', '="../../index.html'))
+        .pipe(replace('="../assets', '="../../assets'))
+        .pipe(replace('href="../pages/', 'href="../../pages/'))
+        .pipe(gulp.dest('.'))
+    return replacePath1
+})
 
 /*sequence for injecting partials and replacing paths*/
 gulp.task('inject', gulp.series('injectPartial' , 'injectCommonAssets' , 'injectLayoutStyles', 'replacePath'));
@@ -148,7 +147,7 @@ gulp.task('buildBaseVendorScripts', function() {
 gulp.task('buildBaseVendorStyles', function() {
     return gulp.src(['../node_modules/perfect-scrollbar/css/perfect-scrollbar.css'])
       .pipe(concat('vendor.bundle.base.css'))
-      .pipe(gulp.dest('./assetsvendors/css'));
+      .pipe(gulp.dest('./assets/vendors/css'));
 });
 
 /*Scripts for addons*/
