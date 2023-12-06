@@ -32,4 +32,4 @@
             $.cookie('staradmin2-free-banner', "true", { expires: date });
           });
     })
-})
+})(jQuery)
